@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FaonCiel\\Desktop\\Pokedex\\Pokedex.csproj",
+      "projectUniqueName": "C:\\Users\\FaonCiel\\Desktop\\Pokedex\\Pokedex\\Pokedex.csproj",
       "projectName": "Pokedex",
-      "projectPath": "C:\\Users\\FaonCiel\\Desktop\\Pokedex\\Pokedex.csproj",
+      "projectPath": "C:\\Users\\FaonCiel\\Desktop\\Pokedex\\Pokedex\\Pokedex.csproj",
       "packagesPath": "C:\\Users\\FaonCiel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FaonCiel\\Desktop\\Pokedex\\obj\\",
+      "outputPath": "C:\\Users\\FaonCiel\\Desktop\\Pokedex\\Pokedex\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\FaonCiel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
       }
     }
   }

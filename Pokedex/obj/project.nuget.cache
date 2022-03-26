@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "snqHHXdxOQrgpPLI98w03qJDcg6K4Yo3UISZ+HzsWOop61dAfsQmiZ0LUqd0XNA6zCbBCaJD3hDOve/ZwMmVww==",
+  "dgSpecHash": "bPnKnguBlW4Hpr+wxi2aLnYaeQpRllbg2hOyH2LSIc5IPATtJDR6h+23vgJVsNArB8d59B+caLfil/r0CBIgeQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\FaonCiel\\Desktop\\Pokedex\\Pokedex.csproj",
+  "projectFilePath": "C:\\Users\\FaonCiel\\Desktop\\Pokedex\\Pokedex\\Pokedex.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

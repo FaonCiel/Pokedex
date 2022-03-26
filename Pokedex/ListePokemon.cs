@@ -45,7 +45,6 @@ namespace Pokedex
                 t.Join();
             }
             
-
             AllPoke.AddRange(ListeGen1);
             AllPoke.AddRange(ListeGen2);
             AllPoke.AddRange(ListeGen3);
@@ -111,8 +110,6 @@ namespace Pokedex
 
         }
 
-       
-    
         public void parcourirlaliste(List<Pokemon> Gen)
         {
             for (int i = 0; i < Gen.Count; i++)
@@ -123,22 +120,28 @@ namespace Pokedex
             }
         }
 
-        public void MoyennePoids(string type)
-        {
-            Double poids = 0.0;
-            int nbpkmn=0;
-            for (int i = 0; i < AllPoke.Count; i++)
-            {
-                foreach (string typePoke in AllPoke[i].types)
-                {
-                    if (typePoke == type)
-                    {
-                        poids = poids + AllPoke[i].weight;
-                        nbpkmn++;
-                    }
-                }               
-            }
-            Console.WriteLine("La moyene du poids des pokemons de type : " + type + " est " + poids / nbpkmn);
-        }
+        
+        //Donne la Moyenne des poids des pokemons d'un type donné
+
+        
+        
+
+
+
+             
+        
+
+        
+    
+    
+    
     }
 }
+
+
+
+       
+    
+    
+    
+
