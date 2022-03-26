@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System;
-using System.Text.Json;
 using System.Net;
-using System.Collections.Generic;
+using System.Text.Json;
 
 namespace Pokedex
 {
     class getPokebygen
     {
-
         public static void getPoke(int idstart, int idend,List<Pokemon>listPoke)
         {
             WebClient webclient = new WebClient();
