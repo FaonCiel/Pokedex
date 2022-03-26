@@ -52,7 +52,7 @@ namespace Pokedex
             {
                  int i = 0;
                  AllPoke.AddRange(list); //on ajoute tous les pokemons de chaque génération dans la liste AllPoke
-                i++;
+                 i++;
             }   
         }
         public void Affiche() //Affiche tous les pokemons
@@ -90,6 +90,7 @@ namespace Pokedex
                     parcourirlaliste(ListeGen8); // on fais appel a la fonction parcourir la liste en lui passant notre liste de tous les pokemons de la huitième génération
                     break;    
                 default:
+                   Console.WriteLine("Erreur");
                     break;
             }
 
@@ -105,6 +106,7 @@ namespace Pokedex
                         AllPoke[i].getgen(AllPoke[i].id);
                         Console.WriteLine("id  : " + AllPoke[i].id);
                         Console.WriteLine("nom : " + AllPoke[i].name.fr);
+                        Console.WriteLine("type :" + type);
                     }
                 }
             }
@@ -144,68 +146,38 @@ namespace Pokedex
             Console.WriteLine("La moyenne des poids des pokemons de type " + type + " est de " + moyenne);
 
         }
-
-        //Make Indexers for list a Pokemon and all of his stats with name
-        public Pokemon this[string name]
-        {
-            get
-            {
-                foreach (Pokemon p in AllPoke)
-                {
-                    if (p.name.fr == name)
-                    {
-                        return p;
-                    }
-                }
-                return null;
-            }
-        }
-        
-        //Make Indexers for list a Pokemon and all of his stats with id
-        public Pokemon this[int id]
-        {
-            get
-            {
-                foreach (Pokemon p in AllPoke)
-                {
-                    if (p.id == id)
-                    {
-                        return p;
-                    }
-                }
-                return null;
-            }
-        }
-
         public void AffichePokemonChaqueType(){
-           
+            List<string> ListeType= new List<string>();
             {
-                foreach(List<Pokemon> list in ListePoke)
-                {
+              foreach(List<Pokemon> list in ListePoke)
+              {
                     foreach (Pokemon poke in list)
                     {
+                        int i = 0;
+                        poke.getgen(AllPoke[i].id);
+                        i++;
                         foreach (string type in poke.types)
                         {
-                            Console.WriteLine("id  : " + poke.id);
-                            Console.WriteLine("nom : " + poke.name.fr);
-                            Console.WriteLine(poke.types);
+                            if (!ListeType.Contains(type))
+                            {
+                                ListeType.Add(type);
+                                Console.WriteLine(poke.name.fr);
+                                Console.WriteLine(poke.gen);
+                                Console.WriteLine(type);
+                                
+                            }
                         }
+                    
                     }
-                }
+                ListeType.Clear();
+              }
                 
             }
         
         }
-
-             
-        
-
-        
-    
-    
-    
     }
 }
+
 
 
 
