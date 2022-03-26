@@ -51,7 +51,7 @@ namespace Pokedex
            foreach (List<Pokemon> list in ListePoke)
             {
                  int i = 0;
-                 AllPoke.AddRange(ListePoke[i]); //on ajoute tous les pokemons de chaque génération dans la liste AllPoke
+                 AllPoke.AddRange(list); //on ajoute tous les pokemons de chaque génération dans la liste AllPoke
                 i++;
             }   
         }
@@ -69,25 +69,25 @@ namespace Pokedex
                     parcourirlaliste(ListeGen1); // on fais appel a la fonction parcourir la liste en lui passant notre liste de tous les pokemons de la premiere génération
                     break;
                 case 2 :
-                    parcourirlaliste(ListeGen2);// on fais appel a la fonction parcourir la liste en lui passant notre liste de tous les pokemons de la deuxième génération
+                    parcourirlaliste(ListeGen2); // on fais appel a la fonction parcourir la liste en lui passant notre liste de tous les pokemons de la deuxième génération
                     break;
                 case 3 :
-                    parcourirlaliste(ListeGen3); //on fais appel a la fonction parcourir la liste en lui passant notre liste de tous les pokemons de la troisième génération
+                    parcourirlaliste(ListeGen3); // on fais appel a la fonction parcourir la liste en lui passant notre liste de tous les pokemons de la troisième génération
                     break;
                 case 4 :
                     parcourirlaliste(ListeGen4); // on fais appel a la fonction parcourir la liste en lui passant notre liste de tous les pokemons de la quatrième génération
                     break;
                 case 5 :
-                    parcourirlaliste(ListeGen5);
+                    parcourirlaliste(ListeGen5); // on fais appel a la fonction parcourir la liste en lui passant notre liste de tous les pokemons de la cinquième génération
                     break;
                 case 6 :
-                    parcourirlaliste(ListeGen6);
+                    parcourirlaliste(ListeGen6); // on fais appel a la fonction parcourir la liste en lui passant notre liste de tous les pokemons de la sixième génération
                     break;
                 case 7 :
-                    parcourirlaliste(ListeGen7);
+                    parcourirlaliste(ListeGen7); // on fais appel a la fonction parcourir la liste en lui passant notre liste de tous les pokemons de la septième génération
                     break;
                 case 8 :
-                    parcourirlaliste(ListeGen8);
+                    parcourirlaliste(ListeGen8); // on fais appel a la fonction parcourir la liste en lui passant notre liste de tous les pokemons de la huitième génération
                     break;    
                 default:
                     break;
@@ -96,9 +96,9 @@ namespace Pokedex
         }
         public void Affiche(string type)
         {
-            for (int i = 0; i < AllPoke.Count; i++)
+            for (int i = 0; i < AllPoke.Count; i++) // on parcour la liste de tous les pokemons
             {
-                foreach (string typePoke in AllPoke[i].types)
+                foreach (string typePoke in AllPoke[i].types) 
                 {
                     if (typePoke == type)
                     {
@@ -112,14 +112,15 @@ namespace Pokedex
         }
 
         
-        public void parcourirlaliste(List<Pokemon> Gen)
-        {
-            for (int i = 0; i < Gen.Count; i++)
+        public void parcourirlaliste(List<Pokemon> Liste)
+        {  
+            for (int i = 0; i < Liste.Count; i++)
             {
-                AllPoke[i].getgen(Gen[i].id);
-                Console.WriteLine("id  : " + Gen[i].id);
-                Console.WriteLine("nom : " + Gen[i].name.fr);
+                AllPoke[i].getgen(Liste[i].id);
+                Console.WriteLine("id  : " + Liste[i].id);
+                Console.WriteLine("nom : " + Liste[i].name.fr);
             }
+            
         }
 
         //Donne la Moyenne des poids des pokemons d'un type donné
@@ -185,7 +186,7 @@ namespace Pokedex
                     {
                         foreach (string type in poke.types)
                         {
-                             Console.WriteLine("id  : " + poke.id);
+                            Console.WriteLine("id  : " + poke.id);
                             Console.WriteLine("nom : " + poke.name.fr);
                             Console.WriteLine(poke.types);
                         }
