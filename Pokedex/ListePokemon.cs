@@ -99,14 +99,15 @@ namespace Pokedex
         {
             for (int i = 0; i < AllPoke.Count; i++) // on parcour la liste de tous les pokemons
             {
-                foreach (string typePoke in AllPoke[i].types) 
+                foreach (string typePoke in AllPoke[i].types) // certain pokemons peuvent avoir plusieurs types on parcour donc la listes des type du pokemon  
                 {
-                    if (typePoke == type)
+                    if (typePoke == type) // Si le type du pokemon est le meme que le type passer en paramettre
+                   
                     {
-                        AllPoke[i].getgen(AllPoke[i].id);
-                        Console.WriteLine("id  : " + AllPoke[i].id);
-                        Console.WriteLine("nom : " + AllPoke[i].name.fr);
-                        Console.WriteLine("type :" + type);
+                        AllPoke[i].getgen(AllPoke[i].id); // on récupére la génération du pokemon
+                        Console.WriteLine("id  : " + AllPoke[i].id); // on affiche l'id du pokemon
+                        Console.WriteLine("nom : " + AllPoke[i].name.fr); // on affiche le nom du pokemon
+                        Console.WriteLine("type :" + type); // on affiche le type du pokemon
                     }
                 }
             }
@@ -114,62 +115,63 @@ namespace Pokedex
         }
 
         
-        public void parcourirlaliste(List<Pokemon> Liste)
+        public void parcourirlaliste(List<Pokemon> Liste) //Fonction qui parcoure et Affiche une liste de pokemon passer par parametre 
         {  
-            for (int i = 0; i < Liste.Count; i++)
+            for (int i = 0; i < Liste.Count; i++) 
             {
-                AllPoke[i].getgen(Liste[i].id);
-                Console.WriteLine("id  : " + Liste[i].id);
-                Console.WriteLine("nom : " + Liste[i].name.fr);
+                AllPoke[i].getgen(Liste[i].id); // on récupére la génération du pokemon
+                Console.WriteLine("id  : " + Liste[i].id); // on affiche l'id du pokemon
+                Console.WriteLine("nom : " + Liste[i].name.fr); //on affiche le nom du pokemon
             }
             
         }
 
-        //Donne la Moyenne des poids des pokemons d'un type donné
+        
 
-        public void MoyennePoids(string type)
+        public void MoyennePoids(string type) //Donne la Moyenne des poids des pokemons d'un type donné
         {
             double moyenne = 0;
             int nb = 0;
-            for (int i = 0; i < AllPoke.Count; i++)
+            for (int i = 0; i < AllPoke.Count; i++) // on parcour la liste de tous les pokemons
+                       
             {
-                foreach (string typePoke in AllPoke[i].types)
+                foreach (string typePoke in AllPoke[i].types) //certain pokemons peuvent avoir plusieurs types on parcour donc la listes des types du pokemon 
                 {
-                    if (typePoke == type)
+                    if (typePoke == type) //si le type est le meme que le type passer en paramettre
                     {
-                        moyenne += AllPoke[i].weight;
-                        nb++;
+                        moyenne += AllPoke[i].weight; // on ajoute le poids du pokemon dans la variable moyenne
+                        nb++; // on ajoute 1 au nombre de pokemon
                     }
                 }
             }
-            moyenne = moyenne / nb;
+            moyenne = moyenne / nb; //on fais le calucl de la moyenne des poids des pokemons du type choisi
             Console.WriteLine("La moyenne des poids des pokemons de type " + type + " est de " + moyenne);
 
         }
         public void AffichePokemonChaqueType(){
-            List<string> ListeType= new List<string>();
+            List<string> ListeType= new List<string>(); //on initialise une liste de string qui va contenir tous les types de pokemons
             {
-              foreach(List<Pokemon> list in ListePoke)
+              foreach(List<Pokemon> list in ListePoke) //on parcours la Liste de Liste de Pokemon (pour avoir les 8 générations)
               {
-                    foreach (Pokemon poke in list)
+                    foreach (Pokemon poke in list) // pour chaque pokemon par liste
                     {
                         int i = 0;
-                        poke.getgen(AllPoke[i].id);
+                        poke.getgen(AllPoke[i].id); // on récupérère la génération du pokemon (sert uniquement pour l'affichage)
                         i++;
-                        foreach (string type in poke.types)
+                        foreach (string type in poke.types) // on parcour la liste des types du pokemon
                         {
-                            if (!ListeType.Contains(type))
+                            if (!ListeType.Contains(type)) // Si notre liste de type ne contient pas le type du pokemon 
                             {
-                                ListeType.Add(type);
-                                Console.WriteLine(poke.name.fr);
-                                Console.WriteLine(poke.gen);
-                                Console.WriteLine(type);
+                                ListeType.Add(type); // on ajoute le type a la liste
+                                Console.WriteLine(poke.name.fr); // on affiche le nom du pokemon
+                                Console.WriteLine(poke.gen); // on affiche la génération du pokemon
+                                Console.WriteLine(type); // on affiche le type du pokemon
                                 
                             }
                         }
                     
                     }
-                ListeType.Clear();
+                ListeType.Clear();// on vide la liste de type a chaque génération 
               }
                 
             }

@@ -43,9 +43,9 @@ namespace Pokedex
         public Description description { get; set; }
         public List<Stat> stats { get; set; }
         public int lastEdit { get; set; }
-        public int gen { get; set; }
+        public int gen { get; set; }// génération du pokemon
 
-        public void getgen(int id)
+        public void getgen(int id) // fonction getgen qui affecte une génération a un pokemon selon son id 
         {
             if (this.id <= 151)
                 this.gen = 1;

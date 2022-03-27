@@ -11,22 +11,16 @@ namespace Pokedex
        public static ListePokemon Pokedex;
         static void Main(string[] args)
         {
-            Pokedex = new ListePokemon();
-            Pokedex.initlistpokemon();
-            Menu();
+            Pokedex = new ListePokemon(); // On instancie le pokedex 
+            Pokedex.initlistpokemon(); // On initialise la liste de pokemon en récupérant les données de l'API
+            Menu(); // On affiche le menu a l'utilisateur
            
-            /*
-            WebClient webclient = new WebClient();
-            string liste = webclient.DownloadString("https://tmare.ndelpech.fr/tps/pokemons");
-            List<ListePokemon> listedepokemon = JsonSerializer.Deserialize<List<ListePokemon>>(liste);
-             //Console.WriteLine(AllPoke.Count);
-            */
         }
 
         public static void Menu()
         {
             int choix;
-            do
+            do   // on utilise un do while pour attendre le choix de l'utilisateur et ne pas quitter le programe après un choix 
             {
                 Console.WriteLine("Que voulez vous faire ?");
                 Console.WriteLine("1. Afficher la liste des Pokémons : Numéro et nom ");
@@ -38,7 +32,7 @@ namespace Pokedex
                 Console.WriteLine("7. Retrouver un Pokémon avec son id");
                 Console.WriteLine("0. Quitter");
 
-                choix = Convert.ToInt32(Console.ReadLine());
+                choix = Convert.ToInt32(Console.ReadLine()); // On converti le choix de l'utilisateur en int pour pouvoir l'utiliser dans le switch case
                 Console.Clear();
                 switch (choix)
                 {
